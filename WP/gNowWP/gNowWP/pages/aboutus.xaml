@@ -1,0 +1,49 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="gNowWP.pages.aboutus"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="GRAVITY NOW!" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.titleAbout, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer>
+                <Grid>
+                    <StackPanel>
+                        <TextBlock HorizontalAlignment="Left" Height="Auto" TextWrapping="Wrap" Text="GRAVITY NOW!" VerticalAlignment="Top" Width="Auto" Margin="12,0,0,0" FontFamily="SegoeUI" FontWeight="Bold" FontSize="35" />
+                        <TextBlock Height="Auto" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.descAbout, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="Auto" Margin="12,0,0,0" FontFamily="Segoe UI Semilight" FontSize="25" />
+                        <TextBlock HorizontalAlignment="Left" Height="Auto" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.lblContact, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="Auto" Margin="12,0,0,0" FontFamily="SegoeUI" FontWeight="Bold" FontSize="35" />
+                        <TextBlock Height="Auto" x:Name="txtEmail" TextWrapping="Wrap" Text="gravitynowsv@gmail.com" VerticalAlignment="Top" Width="Auto" Margin="12,0,0,0" FontFamily="Segoe UI Semilight" FontSize="25" Foreground="{StaticResource PhoneAccentBrush}" Tap="TextBlock_Tap_1" />
+                        <TextBlock Height="Auto" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.lblVisit, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Margin="12,0,0,0" FontFamily="SegoeUI" FontWeight="Bold" FontSize="35" />
+                        <TextBlock Height="Auto" x:Name="txtSite" TextWrapping="Wrap" Text="gravitynow.tk" VerticalAlignment="Top" Width="Auto" Margin="12,0,0,0" FontFamily="Segoe UI Semilight" FontSize="25" Foreground="{StaticResource PhoneAccentBrush}" Tap="TextBlock_Tap_1" />
+                        <TextBlock Height="Auto" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.lblGreeting, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Margin="12,0,0,0" FontFamily="SegoeUI" FontWeight="Bold" FontSize="35" />
+                        <TextBlock Height="Auto" TextWrapping="Wrap" Text="NASA, GeoCensos, La Casa Tomada," VerticalAlignment="Top" Margin="12,0,0,0" FontFamily="Segoe UI Semilight" FontSize="25" />
+                        <TextBlock Height="Auto" TextWrapping="Wrap" Text="SensorsOne" VerticalAlignment="Top" Width="Auto" Margin="12,0,0,0" FontFamily="Segoe UI Semilight" FontSize="25" Foreground="{StaticResource PhoneAccentBrush}" Tap="TextBlock_Tap_3" />
+                    </StackPanel>
+
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

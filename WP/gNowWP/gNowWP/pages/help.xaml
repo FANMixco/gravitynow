@@ -1,0 +1,66 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="gNowWP.pages.help"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    xmlns:imagetools="clr-namespace:ImageTools.Controls;assembly=ImageTools.Controls" Loaded="PhoneApplicationPage_Loaded">
+
+    <phone:PhoneApplicationPage.Resources>
+        <imagetools:ImageConverter x:Key="ImageConverter" />
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <phone:Pivot Title="{Binding Path=LocalizedResources.titleWGravity, Source={StaticResource LocalizedStrings}}">
+
+            <phone:PivotItem Header="definition">
+                <Grid>
+                    <ScrollViewer>
+                        <StackPanel>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.lblGravity2, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top"  Style="{StaticResource PhoneTextNormalStyle}" FontWeight="Bold" FontSize="36"/>
+                            <RichTextBox x:Name="rtxtDescGravity" TextAlignment="Justify" IsReadOnly="True" FontSize="30">
+                            </RichTextBox>
+                            <Image Source="/Assets/Images/NewtonApple.jpg" Margin="0,25,0,0" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.titleGravityC, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <ScrollViewer>
+                        <StackPanel>
+                            <imagetools:AnimatedImage x:Name="Image" Source="{Binding Path=ImageSource, Converter={StaticResource ImageConverter}}" Margin="0,0,0,25" />
+                            <RichTextBox x:Name="rtxtGravityCDesc" TextAlignment="Justify" IsReadOnly="True" FontSize="30" Foreground="#FFD8D8D8">
+                            </RichTextBox>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.titleFormula, Source={StaticResource LocalizedStrings}}">
+                <ScrollViewer>
+                    <StackPanel>
+
+                        <RichTextBox x:Name="rtxtFormula" TextAlignment="Justify" IsReadOnly="True" FontSize="30" FontFamily="Portable User Interface">
+                        </RichTextBox>
+                        <StackPanel HorizontalAlignment="Left" Margin="0,15,0,0">
+                            <HyperlinkButton Foreground="{StaticResource PhoneAccentBrush}" Content="{Binding Path=LocalizedResources.hypLink1, Source={StaticResource LocalizedStrings}}" Tap="HyperlinkButton_Tap" HorizontalContentAlignment="Left" />
+                            <HyperlinkButton Foreground="{StaticResource PhoneAccentBrush}" Content="{Binding Path=LocalizedResources.hypLink2, Source={StaticResource LocalizedStrings}}" HorizontalContentAlignment="Left" />
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+
+</phone:PhoneApplicationPage>

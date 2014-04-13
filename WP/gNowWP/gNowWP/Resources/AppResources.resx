@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="itemEarth" xml:space="preserve">
+    <value>Earth</value>
+  </data>
+  <data name="itemJupiter" xml:space="preserve">
+    <value>Jupiter</value>
+  </data>
+  <data name="itemMars" xml:space="preserve">
+    <value>Mars</value>
+  </data>
+  <data name="itemMercury" xml:space="preserve">
+    <value>Mercury</value>
+  </data>
+  <data name="itemMoon" xml:space="preserve">
+    <value>Moon</value>
+  </data>
+  <data name="itemNeptune" xml:space="preserve">
+    <value>Neptune</value>
+  </data>
+  <data name="itemPluto" xml:space="preserve">
+    <value>Pluto</value>
+  </data>
+  <data name="itemSaturn" xml:space="preserve">
+    <value>Saturn</value>
+  </data>
+  <data name="itemSun" xml:space="preserve">
+    <value>Sun</value>
+  </data>
+  <data name="itemUranus" xml:space="preserve">
+    <value>Uranus</value>
+  </data>
+  <data name="itemVenus" xml:space="preserve">
+    <value>Venus</value>
+  </data>
+  <data name="lblAltitude" xml:space="preserve">
+    <value>Altitude</value>
+  </data>
+  <data name="lblChoose" xml:space="preserve">
+    <value>Choose one</value>
+  </data>
+  <data name="lblLatitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="lblLongitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="lblUnits" xml:space="preserve">
+    <value>Units</value>
+  </data>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>en-US</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="titleCalculator" xml:space="preserve">
+    <value>calculator</value>
+  </data>
+  <data name="titleComparative" xml:space="preserve">
+    <value>comparative</value>
+  </data>
+  <data name="titleNow" xml:space="preserve">
+    <value>now</value>
+  </data>
+  <data name="btnAerial" xml:space="preserve">
+    <value>aerial view</value>
+  </data>
+  <data name="btnChangeU" xml:space="preserve">
+    <value>change units</value>
+  </data>
+  <data name="btnRefresh" xml:space="preserve">
+    <value>refresh</value>
+  </data>
+  <data name="btnRoad" xml:space="preserve">
+    <value>road view</value>
+  </data>
+  <data name="btnShare" xml:space="preserve">
+    <value>share</value>
+  </data>
+  <data name="btnSignIn" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="btnSignOut" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
+  <data name="btnSync" xml:space="preserve">
+    <value>sync</value>
+  </data>
+  <data name="descAbout" xml:space="preserve">
+    <value>It is an application designed by SuperNova in 2014. The main purpose of this App is helping all students around the world to understand better the gravity.</value>
+  </data>
+  <data name="errAltitudeAbove" xml:space="preserve">
+    <value>Height above Everest?</value>
+  </data>
+  <data name="errAltitudeBelow" xml:space="preserve">
+    <value>Height below Dead Sea?</value>
+  </data>
+  <data name="errData" xml:space="preserve">
+    <value>We don't have data.</value>
+  </data>
+  <data name="errGPS" xml:space="preserve">
+    <value>We need your location. Do you want to activate your GPS?</value>
+  </data>
+  <data name="errGPS2" xml:space="preserve">
+    <value>Activate your GPS.</value>
+  </data>
+  <data name="errInternet" xml:space="preserve">
+    <value>You don't have internet connection.</value>
+  </data>
+  <data name="errLatitude" xml:space="preserve">
+    <value>Latitude not valid</value>
+  </data>
+  <data name="errLogin" xml:space="preserve">
+    <value>Please login first!</value>
+  </data>
+  <data name="errNoSignIn" xml:space="preserve">
+    <value>You're not signed in.</value>
+  </data>
+  <data name="errReg" xml:space="preserve">
+    <value>You've previously registered!</value>
+  </data>
+  <data name="errTry" xml:space="preserve">
+    <value>Please try again later.</value>
+  </data>
+  <data name="gravBigger" xml:space="preserve">
+    <value>This gravity is bigger in: </value>
+  </data>
+  <data name="gravSame" xml:space="preserve">
+    <value>Gravity is the same.</value>
+  </data>
+  <data name="gravSmaller" xml:space="preserve">
+    <value>This gravity is smaller in: </value>
+  </data>
+  <data name="GvsA" xml:space="preserve">
+    <value>Gravity vs Altitude</value>
+  </data>
+  <data name="itemImperial" xml:space="preserve">
+    <value>Imperial (US)</value>
+  </data>
+  <data name="itemMetric" xml:space="preserve">
+    <value>Metric</value>
+  </data>
+  <data name="lblASync" xml:space="preserve">
+    <value>Auto Syncing</value>
+  </data>
+  <data name="lblBody1" xml:space="preserve">
+    <value>My gravity now is: </value>
+  </data>
+  <data name="lblBody2" xml:space="preserve">
+    <value>, checking your one with Gravity Now! How about you?</value>
+  </data>
+  <data name="lblContact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="lblGravity" xml:space="preserve">
+    <value>gravity</value>
+  </data>
+  <data name="lblGreeting" xml:space="preserve">
+    <value>Greetings</value>
+  </data>
+  <data name="lblLogin" xml:space="preserve">
+    <value>login</value>
+  </data>
+  <data name="lblSocial" xml:space="preserve">
+    <value>Social Networks</value>
+  </data>
+  <data name="lblSubject" xml:space="preserve">
+    <value>Hey, check your gravity!</value>
+  </data>
+  <data name="maximumC" xml:space="preserve">
+    <value>Maximum number of decimal places (calculator)</value>
+  </data>
+  <data name="maximumG" xml:space="preserve">
+    <value>Maximum number of decimal places (gravity)</value>
+  </data>
+  <data name="menuAbout" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="menuHelp" xml:space="preserve">
+    <value>what is gravity?</value>
+  </data>
+  <data name="menuProfile" xml:space="preserve">
+    <value>profile</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>Your gravity was successfully registered, thanks!</value>
+  </data>
+  <data name="successFull" xml:space="preserve">
+    <value>All your information was successfully registered, thanks!</value>
+  </data>
+  <data name="titleAbout" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="titleProfile" xml:space="preserve">
+    <value>my profile</value>
+  </data>
+  <data name="titleShare" xml:space="preserve">
+    <value>SHARE</value>
+  </data>
+  <data name="titleThanks" xml:space="preserve">
+    <value>Thanks</value>
+  </data>
+  <data name="txtEmail" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="txtFullName" xml:space="preserve">
+    <value>Full name:</value>
+  </data>
+  <data name="itemFeet" xml:space="preserve">
+    <value>Feet (ft)</value>
+  </data>
+  <data name="itemMetres" xml:space="preserve">
+    <value>Metres (m)</value>
+  </data>
+  <data name="lblAltitude1" xml:space="preserve">
+    <value>altitude</value>
+  </data>
+  <data name="lblEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="lblLatitude1" xml:space="preserve">
+    <value>latitude</value>
+  </data>
+  <data name="lblLongitude1" xml:space="preserve">
+    <value>longitude</value>
+  </data>
+  <data name="titleLocations" xml:space="preserve">
+    <value>my locations</value>
+  </data>
+  <data name="titleOptions" xml:space="preserve">
+    <value>options</value>
+  </data>
+  <data name="lblVisit" xml:space="preserve">
+    <value>Visit us</value>
+  </data>
+  <data name="lblGravityCDesc" xml:space="preserve">
+    <value>Earth's gravity measured by NASA's GRACE mission, showing deviations from the theoretical gravity of an idealized smooth Earth, the so-called earth ellipsoid. Red shows the areas where gravity is stronger than the smooth, standard value, and blue reveals areas where gravity is weaker. (Animated version)</value>
+  </data>
+  <data name="lblGravityDesc" xml:space="preserve">
+    <value>Gravity, is a natural phenomenon by which all physical bodies attract each other. It is most commonly recognized and experienced as the agent that gives weight to physical objects, and causes physical objects to fall toward the ground when dropped from a height.</value>
+  </data>
+  <data name="titleDefinition" xml:space="preserve">
+    <value>definition</value>
+  </data>
+  <data name="titleFormula" xml:space="preserve">
+    <value>formula</value>
+  </data>
+  <data name="titleGravityC" xml:space="preserve">
+    <value>gravity change</value>
+  </data>
+  <data name="titleWGravity" xml:space="preserve">
+    <value>WHAT IS GRAVITY?</value>
+  </data>
+  <data name="hypLink1" xml:space="preserve">
+    <value>¹ International Gravity Formula 1967 (IGF)</value>
+  </data>
+  <data name="hypLink2" xml:space="preserve">
+    <value>² Free Air Correction (FAC)</value>
+  </data>
+  <data name="lblFormula1" xml:space="preserve">
+    <value>The formulas used by this App are based on the International Gravity Formula 1967 (IGF)¹ which determines the gravity from the position of latitude, and the Free Air Correction (FAC)² which corrects for height above sea level.</value>
+  </data>
+  <data name="lblFormula10" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="lblFormula11" xml:space="preserve">
+    <value>Height above sea level is a value in metres or feet. If you do not know the height above sea level you should be able to obtain it from your national geological survey maps.</value>
+  </data>
+  <data name="lblFormula2" xml:space="preserve">
+    <value>Symbols</value>
+  </data>
+  <data name="lblFormula3" xml:space="preserve">
+    <value>● g = Theoretical local gravity</value>
+  </data>
+  <data name="lblFormula4" xml:space="preserve">
+    <value>● IGF = International Gravity Formula</value>
+  </data>
+  <data name="lblFormula5" xml:space="preserve">
+    <value>● FAC = Free Air Correction</value>
+  </data>
+  <data name="lblFormula6" xml:space="preserve">
+    <value>● Φ = Latitude</value>
+  </data>
+  <data name="lblFormula7" xml:space="preserve">
+    <value>● h = Height relative to sea level</value>
+  </data>
+  <data name="lblFormula8" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="lblFormula9" xml:space="preserve">
+    <value>Position relative to the equator in decimal degrees. Latitude can only be specified between -90° and 90°. You can determine the latitude position by going to Google Maps and right clicking on the required location and then selecting “Drop LatLng Marker” which will display the decimal latitude value first before the longitude value.</value>
+  </data>
+  <data name="lblGravity2" xml:space="preserve">
+    <value>Gravity:</value>
+  </data>
+</root>
