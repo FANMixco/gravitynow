@@ -1,0 +1,281 @@
+/**
+ * gNow.css - Based on & integrated with glamourize.css
+ *
+ * A CSS Framework to build glamourous sites
+ *
+ * @package		Glamourize
+ * @author		Rega - Supernova Team
+ * @copyright	Copyright (c) 2013, Supernova
+ * @license		http://www.apache.org/licenses/LICENSE-2.0
+ * @link		-- Temporarily offline
+ * @since		Version 1.0
+ * @contents	
+ *				1. Reset CSS (Normalize)
+ *				2. Typography (Font)
+ *				3. Variables
+ *				4. General Selectors
+ *					4.1. Headings (h1-h6)
+ *				5. Layout
+ *				6. Navigation
+ *				7. Forms
+ *					7.1. Buttons
+ *				8. Tables
+ *				9. Messages
+ *				10. General Classes
+ *					10.1. Clearfix Hack
+ * 				11. Mixins
+ *
+ * @filesource
+ */
+ 
+ /*
+ * 1. Reset CSS (Normalize)
+ * Glamourize uses normalize.css with small modifications
+ * @link        http://necolas.github.io/normalize.css/
+ *
+ */
+@import url('normalize.css');
+
+/* 
+* 2. Typography (Font)
+* Glamourize uses Bebas Font by Michael Chereda
+* @link 		http://fontfabric.com/Bebas-free-font/
+*
+*/
+@font-face
+{
+font-family: Pump;
+src: url('../fonts/pump.ttf');
+font-weight:normal;
+font-style:normal;
+}
+
+@font-face
+{
+font-family: Bebas;
+src: url('../fonts/BebasNeue.otf');
+font-weight:normal;
+font-style:normal;
+}
+
+@font-face
+{
+font-family: Droid;
+src: url('../fonts/DroidSans.ttf');
+font-weight:normal;
+font-style:normal;
+}
+
+/* Import Droid Sans (alternative to Myriad Pro) and Open Sans Condensed (alternative to Bebas) via Google Fonts */
+@import url('http://fonts.googleapis.com/css?family=Droid+Sans');
+/*@import url('http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');*/
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+
+/*
+ * 3. Variables
+ * Import the variables from the external vars.less file
+ *
+ */
+@import url('vars.less');
+
+
+
+/*
+ * 4. General Selectors
+ *
+ */
+*{margin:0;padding:0px;}
+ol,ul{list-style:none;}
+html,body{background-color:@bg-color;font-family:"Myriad Pro",Droid,Helvetica,sans-serif;}
+h1,h2,h3,h4,h5,h6,
+p,a,li,label,span,b,em
+{text-rendering:optimizelegibility; text-align:justify;}
+p,a,li,label,span,b,em{font-size:@paragraph;}
+h1,h3,h4,h5,h6,label{color: @title-color;}
+h2{color: @subtitle-color;}
+p{margin-bottom:10px;}
+a{.trans(color); color:@link-color; text-decoration:none;}
+a:hover{color:@link-hover-color;}
+hr{margin-top:2px;border-top:1px solid #dee1e1;border-bottom:1px solid #fff;}
+hr.fx1{border:0;height:1px;
+background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(51,51,51,1) 50%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(51,51,51,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(51,51,51,1) 50%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(51,51,51,1) 50%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(51,51,51,1) 50%,rgba(255,255,255,0) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(51,51,51,1) 50%,rgba(255,255,255,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+/*
+ * 4.1. Headings
+ *
+ */
+h1,h2,h3,h4,h5,h6{margin:0;}
+h1{font-size:@title;font-family:'Open Sans', sans-serif; font-weight:200; text-transform:uppercase;}
+h2{font-size:@sub-title;font-family:"Myriad Pro",Droid,Helvetica,sans-serif;font-weight:normal;}
+
+
+/*
+ * 5. Layout
+ * Glamourize defines a single responsive Layout
+ *
+ */
+body{width:100%; height:100%; position:absolute;}
+#wrapper{	
+	width:100%; height:100%; position:absolute;
+	/*
+    @media (min-width:980px){width:920px;}
+	@media (max-width:979px){width:100%;}	*/
+	.center;
+	background-color:@bg-color;
+}
+#header, #content, #footer{width:100%;}
+#content{.clearfix;/*Content usually has left & right content, so clearfix is needed here*/}
+#footer,#footer p{font-size:@paragraph-small;color:@link-color;}
+/* 6. Navigation */
+.nav{.clearfix; margin-bottom:10px;
+	&.nav-bg{
+		background-color:@fore-color;
+		a{
+			color:@bg-color;
+			.trans(background-color);
+			&:hover,.active{background-color:@title-color;color:@bg-color;}			
+		}
+	}	
+}
+.nav li{
+	.left;
+	a{padding:5px 10px; color:@fore-color;
+	font-size:@paragraph-big; display:block;.trans(color);
+	&:hover{color:@title-color;}
+	}
+}
+
+/* 7. Forms */
+textarea{resize:none;height:90px;}
+input,textarea,select{
+	.trans(all);
+	.border-box;
+	font-size:@paragraph;
+	/*Box-Shadow*/
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="color"]),
+textarea,select{
+	padding:4px 5px;
+	width:100%;
+	border:0;
+	/*Borders*/
+	border-top:1px solid #DFDFDF;
+	border-left:1px solid #DFDFDF;
+	border-bottom:1px solid #DFDFDF;
+	border-right:1px solid #DFDFDF;
+	.rad;
+	&:focus{
+	
+		border-color: rgba(21, 158, 207, 0.75);
+	  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(21, 158, 207, 0.75);
+	  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(21, 158, 207, 0.75);
+	  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(21, 158, 207, 0.75);
+	  outline: 0;
+	  outline: thin dotted \9; /* IE6-9 */
+	}
+	.mobile & {margin-bottom:10px;}
+}
+input[type="checkbox"],input[type="radio"]{margin:2px 5px;vertical-align:top;}
+/* Normal Forms */
+div.form-row{
+	.clearfix; margin-bottom:5px;
+	label{width:27%; .tright; padding-right:3%; display:inline-block;}
+	input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+	textarea,select{width:70% !important;}
+}
+
+/* 7.1. Buttons */
+input[type="submit"],input[type="button"],button,a.btn,.fileinput-button{
+	/*Mixins*/
+	.rad(20px);
+	.trans(all);
+	/*Border*/
+	border:1px solid @button-border;			
+	/*Misc*/	
+	cursor:pointer;
+	padding:6px 15px;
+	font-size:@paragraph-big;
+	/*By default, the bg & fore colors of the buttons will be the same as the theme*/
+	background-color:@button-bg;	
+	color:@button-color;
+	&:hover{			
+		color:@button-hover-color;	
+		background-color:@button-hover-bg;
+		border:1px solid @button-hover-border;
+		.shadow(rgba(86,86,86,1));
+	}
+	&:active{
+		color:@button-active-color;	
+		background-color:@button-active-bg;
+		border:1px solid @button-active-border;
+	}
+	/*Different colors of buttons*/
+	&.blue-grad,&.blue-grad:hover,
+	&.black-grad,&.black-grad:hover,
+	&.red-grad,&.red-grad:hover{color:white;}
+	&.blue-grad{.gradient(@color1:rgba(1,64,131,1); @color2:rgba(0,39,81,1); @color1hex:'#014083'; @color2hex:'#002751'; );}
+	&.blue-grad:hover{.gradient(@color1:rgba(0,67,138,1); @color2:rgba(1,88,181,1); @color1hex:'#00438a'; @color2hex:'#0158b5'; );}
+	&.black-grad{.gradient3(@color1:rgba(133,133,133,1); @color2:rgba(50,50,50,1); @color2stop:3%; @color3:rgba(5,5,5,1); @color1hex:'#858585'; @color2hex:'#050505'; );}
+	&.black-grad:hover{.gradient(@color1:rgba(38,38,38,1); @color2:rgba(99,99,99,1); @color1hex:'#262626'; @color2hex:'#636363'; );}
+	&.red-grad{.gradient(@color1:rgba(242,111,139,1); @color2:rgba(211,42,45,1); @color1hex:'#f26f8b'; @color2hex:'#d32a2d'; );}
+	&.red-grad:hover{.gradient(@color1:rgba(221,83,86,1); @color2:rgba(245,141,164,1); @color1hex:'#dd5356'; @color2hex:'#f58da4'; );}
+	&.sky-grad{.gradient3(@color1:rgba(122,188,255,1); @color2:rgba(96,171,248,1); @color2stop:44%; @color3:rgba(64,150,238,1); @color1hex:'#7abcff'; @color2hex:'#4096ee'; );}
+	&.sky-grad:hover{.gradient3(@color1:rgba(112,177,242,1); @color2:rgba(136,193,250,1); @color2stop:56%; @color3:rgba(157,206,255,1); @color1hex:'#70b1f2'; @color2hex:'#9dceff'; );}
+}
+.fileinput-button{
+	display: inline-block;
+	position: relative;
+	margin-right:3px;	
+	overflow:hidden;	
+}
+.fileinput-button input[type="file"]{		
+	position: absolute;	
+	direction: ltr;
+	cursor:pointer;
+	opacity: 0;	
+	right:0;	
+	top:0;	
+	border-right:90px solid transparent;
+	width:172px;
+}
+
+ /*
+ * 8. Tables
+ *
+ */
+ table.data-table{
+ 	width:100%;	
+	th{text-align:center; font-size:@paragraph-big;}
+	td{padding:4px 8px;border-bottom:1px solid #bdbdbd;text-align:left;}
+	tr{
+		.trans(background-color);
+		&:hover{background-color:#F4F4F4;}
+	}
+	&.striped{
+		tr:nth-child(even){background-color:@striped-color;}
+	}
+}
+
+
+/*
+* 9. Messages
+*
+*/
+
+/*
+* 10. General Classes
+* 11. Mixins
+*
+*/
+@import url('mixins.less');
+ 

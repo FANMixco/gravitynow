@@ -1,0 +1,94 @@
+/*
+ * 10. General Classes
+ *
+ */
+ 
+.center{margin-left:auto; margin-right:auto;}
+ 
+/* Positioning */
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both;}
+
+/* Text-Alignment */
+.tcenter{text-align:center;}
+.tleft{text-align:left;}
+.tright{text-align:right;}
+
+/* Transforms */
+.upper{text-transform:uppercase;}
+
+.screen{width:100%; height:100%;}
+
+
+/*
+ * 10.1. Clearfix Hack
+ * Glamourize uses Nicolas Gallagher's clearfix hack.
+ * @link        http://nicolasgallagher.com/micro-clearfix-hack/
+ *
+ */
+.clearfix{
+	*zoom: 1;
+	&:after{clear: both;}
+	&:before, &:after{ content: " "; /* 1 */ display: table; /* 2 */}
+}
+
+
+
+/*
+ * 11. Mixins
+ *
+ */
+ 
+/* Transitions */
+.trans(@fx: all,@ease:linear,@time:0.2s){
+-webkit-transition: @fx @ease @time;
+-moz-transition: @fx @ease @time;
+-ms-transition: @fx @ease @time;
+-o-transition: @fx @ease @time;
+transition: @fx @ease @time;
+}
+
+.rad(@rad: 4px){
+	/*Border-radius*/
+	-webkit-border-radius: @rad;
+	-moz-border-radius: @rad;
+	border-radius: @rad;
+}
+
+.gradient(@color1:rgba(234,234,234,1); @color2:rgba(255,255,255,1); @color1hex:'#eaeaea'; @color2hex:'#ffffff'; ){
+	background: @color1; /* Old browsers */
+	background: -moz-linear-gradient(top,  @color1 0%, @color2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(100%,@color2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @color1 0%,@color2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  @color1 0%,@color2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  @color1 0%,@color2 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  @color1 0%,@color2 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@color1hex, endColorstr=@color2hex,GradientType=0 ); /* IE6-9 */
+}
+
+.gradient3(@color1:rgba(234,234,234,1); @color2:rgba(255,255,255,1); @color2stop:3%; @color3:rgba(255,255,255,1); @color1hex:'#eaeaea'; @color2hex:'#ffffff'; ){
+	background: @color1; /* Old browsers */
+	background: -moz-linear-gradient(top,  @color1 0%, @color2 @color2stop, @color3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(@color2stop,@color2), color-stop(100%,@color3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @color1 0%,@color2 @color2stop,@color3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  @color1 0%,@color2 @color2stop,@color3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  @color1 0%,@color2 @color2stop,@color3 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  @color1 0%,@color2 @color2stop,@color3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@color1hex, endColorstr=@color2hex,GradientType=0 ); /* IE6-9 */	
+}
+
+
+.border-box{
+	-webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+	-moz-box-sizing: border-box; /* For all Gecko based browsers */
+	box-sizing: border-box;
+}
+
+.shadow(@color:#565656){text-shadow:@color 3px 0px 2px ;}
+
+.scale(@x:2,@y:2){
+-ms-transform: scale(@x,@y); /* IE 9 */
+-webkit-transform: scale(@x,@y); /* Chrome, Safari, Opera */
+transform: scale(@x,@y);
+}

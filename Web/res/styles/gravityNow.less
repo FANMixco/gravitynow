@@ -1,0 +1,164 @@
+/**
+ * gravityNow.css
+ *
+ * Based
+ *
+ * @package		Gravity Now
+ * @author		Rega - Supernova Team
+ * @copyright	Copyright (c) 2014, Supernova
+ * @license		http://www.apache.org/licenses/LICENSE-2.0
+ * @link		http://diputado85.sv/
+ * @since		Version 1.0
+ * @contents	
+ *				1. Base Structure
+ *				2. General Classes & Mixins
+ *				3. Variables
+ *				4. gNow Classes
+ *
+ * @filesource
+ */
+ 
+ /*
+ * 1. Base Structure
+ * The base structure is the integration between glamourize and diputado 85 look & feel. It's in the external file d85
+ *
+ */
+ @import url('gNow.less');
+ 
+ /*
+* 2. General Classes & Mixins
+* 2.1. External Mixins
+*
+*/
+@import url('mixins.less');
+
+/*
+ * 3. Variables
+ * Different variables used in this file 
+ *
+ */
+@import url('vars.less');
+
+/*
+ * 4. gNow Classes
+ * Classes specifically used in the design of D85
+ *
+ */
+ 
+ .splash{
+ 	.trans(opacity, ease-in,1s);
+	.screen();
+	position:absolute;
+	top:0;
+	left:0;
+	opacity:0;
+	overflow:hidden;
+ }
+ 
+ .hidden{display:none; visibility:hidden;}
+ #logo, #logo-bg{
+ 	width:auto;
+	position:absolute;
+	left:50%;	
+	margin-top:-143px;
+	margin-left:-143px;
+	.trans(all, ease-in,1s);	
+ }
+ 
+ #logo{top:50%;z-index:1;}
+ #logo-bg{top:93%;z-index:0;}
+ 
+ .nav.nav-bg{
+ 	background-color:@title-color;
+	ul.menu-right{.right; width:40%;}
+	li{
+		a{
+			color:#DDDDDD;
+			text-transform:uppercase;
+			font-size:36px;
+			.trans(all);
+		}
+	}
+ }
+ 
+ #gravityNow{
+ 	height:100%;
+ 	background-image:url('../imgs/earth-bg.jpg');
+}
+#bottomMnu{.trans(opacity, ease-in,1s);@media (max-width:1300px){display:none;}}
+#vertMnu{.trans(all, ease-in,1s); li{float:none;}}
+
+ 
+ #logo, #logo-bg, #bottomMnu{
+ 	@media (max-width:1300px){display:none;}
+ }
+ 
+#content-main, #mapContainer{
+ 	@media (max-width:1300px){height:100%;}
+ }
+ 
+ .help{
+ 	background-color:@link-color; 
+	color:#FFFFFF; 
+	opacity:0.8; 
+	position:absolute; 
+	right:5%; top:-50%;
+	max-width:25%;
+	padding:2%;
+	.trans(top);
+}
+
+ #result{
+ 	position:absolute;
+	top:85%;
+	font-size:60px;
+	color:#fff;
+	left:50%;
+	margin-left:-123px;
+ }
+ 
+ .zeroOpacity{opacity:0; }
+ 
+ .sec-color{color:#DDDDDD;}
+ .container{background-color:#DDDDDD; opacity:0.75;}
+ #descContainer{top:45%; position:relative;.trans(all, ease-in,1s); height:0%;}
+ #pDesc{font-size:36px;}
+ 
+ #mobile-menu{position:absolute; top:93%; left:95%; cursor:pointer;}
+ 
+ /* Links */
+ div.law-nav{
+ 	> ul li{
+		float:left;
+		a{
+			display:block;
+			width:33px;
+			height:33px;
+			margin:3px;			
+			text-align:center;
+			font-size:@paragraph-big;
+			color:@button-hover-color;	
+			background-color:@button-hover-bg;
+			border:1px solid @button-hover-border;
+			.shadow(rgba(86,86,86,1));
+			.rad(24px);
+			.trans(all,linear,0.1s);			
+			&:hover{
+				color:@button-active-color;	
+				background-color:@button-active-bg;
+				border:1px solid @button-active-border;
+				.scale(1.5,1.5);
+			}
+		}
+	}	
+ }
+ 
+ 
+ /* More Mixins */
+ .center-abs{
+	position:relative;
+ 	top:50%;
+	left:25%;	
+	width:50%;
+	margin-top:-25%;
+ }
