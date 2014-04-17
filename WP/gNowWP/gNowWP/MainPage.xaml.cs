@@ -291,19 +291,19 @@ namespace gNowWP
 
             if (((Pivot)sender).SelectedIndex == 2 && String.IsNullOrEmpty(lblGravity1.Text))
             {
-                gravityPlaces data = new gravityPlaces();
+                gravityPlaces dataR = new gravityPlaces();
 
-                imgPlace1.Source = new BitmapImage(new Uri("/Assets/Planets/" + data.getName(3).ToString().ToLower() + ".jpg", UriKind.Relative));
-                lblDescription1.Text = data.getDescription(3);
+                imgPlace1.Source = new BitmapImage(new Uri("/Assets/Planets/" + dataR.getName(3).ToString().ToLower() + ".jpg", UriKind.Relative));
+                lblDescription1.Text = dataR.getDescription(3);
                 if (!((String.Equals(lblGravity.Text, AppResources.errData)) || String.IsNullOrEmpty(lblGravity.Text)))
                 {
                     if (lblUnitsG.Text == " ft/s²")
-                        lblGravity1.Text = G.changeToMetres(Convert.ToDouble( lblGravity.Text)).ToString();
+                        lblGravity1.Text = Math.Round(G.changeToMetres(Convert.ToDouble(lblGravity.Text)), data[0].Ndecimal).ToString();
                     else
                         lblGravity1.Text = lblGravity.Text;
                 }
                 else
-                    lblGravity1.Text = data.getGravity(3).ToString();
+                    lblGravity1.Text = dataR.getGravity(3).ToString();
             }
         }
 
