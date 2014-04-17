@@ -23,7 +23,7 @@
 		</div>
 	</div>
 </div>
-<div id="uiContainer"></div>
+<div id="uiContainer" style="display:none !important;"></div>
 
 <img id="mobile-menu" src="<?php echo base_url('res/imgs/mobile_menu.png'); ?>" />
 <div id="vertMnu" class="splash nav nav-bg" style="margin:0;">
