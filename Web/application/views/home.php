@@ -13,6 +13,8 @@
 	</div>
 	
 	<div id="home" class="splash">
+		<a href="https://github.com/FANMixco/gravitynow" target='_blank'><img src="http://aral.github.io/fork-me-on-github-retina-ribbons/left-red@2x.png" style="width: 200px; position: absolute; z-index: 50; top:0; left:0" /></a>
+	
 		<div id="mapContainer" style="height:90%;"></div>
 		<img id="logo" src="<?php echo base_url('res/imgs/logo.png'); ?>" />
 		<img id="logo-bg" class="hidden" src="<?php echo base_url('res/imgs/logo-bg.png'); ?>" />

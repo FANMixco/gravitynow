@@ -20,7 +20,7 @@ $lang['gravityNow']	              = "It is an educational platform that aims to 
 $lang['downloadApp']	          = "Download the Apps";
 
 //Help
-$lang['helpMarker']	              = "Drag the marker to calculate the gravity through the world, in REAL TIME!"; 
+$lang['helpMarker']	              = "Drag the marker to calculate the gravity through the world, in REAL TIME! Or just CLICK where you want!"; 
 
 
 ?>
