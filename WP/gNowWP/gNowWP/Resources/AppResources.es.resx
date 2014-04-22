@@ -351,7 +351,7 @@
     <value>Visitanos</value>
   </data>
   <data name="lblGravityCDesc" xml:space="preserve">
-    <value>Gravedad de la Tierra medido por la misión GRACE de la NASA, que muestra las desviaciones de la gravedad teórica de una suave Tierra idealizada, el llamado elipsoide tierra. Red muestra las áreas donde la gravedad es más fuerte que el valor suave, estándar, y azul revela áreas donde la gravedad es más débil. (Versión animada)</value>
+    <value>La gravedad de la Tierra medida por la misión GRACE de la NASA, muestra las desviaciones de la gravedad teórica de una Tierra suavemente idealizada, el llamado elipsoide terrestre. El color rojo muestra las áreas donde la gravedad es más fuerte y el color azul revela las áreas donde la gravedad es más débil. (Versión animada)</value>
   </data>
   <data name="lblGravityDesc" xml:space="preserve">
     <value>La gravedad, es un fenómeno natural por el cual todos los cuerpos físicos se atraen entre sí. Es más comúnmente reconocido y experimentado como el agente que da peso a los objetos físicos, y hace que los objetos físicos a caer hacia el suelo cuando se deja caer desde una altura.</value>
@@ -409,5 +409,8 @@
   </data>
   <data name="lblGravity2" xml:space="preserve">
     <value>Gravedad:</value>
+  </data>
+  <data name="menuAbout" xml:space="preserve">
+    <value>acerca de</value>
   </data>
 </root>

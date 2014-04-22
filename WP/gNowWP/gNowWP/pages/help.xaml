@@ -22,7 +22,7 @@
 
         <phone:Pivot Title="{Binding Path=LocalizedResources.titleWGravity, Source={StaticResource LocalizedStrings}}">
 
-            <phone:PivotItem Header="definition">
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.titleDefinition, Source={StaticResource LocalizedStrings}}">
                 <Grid>
                     <ScrollViewer>
                         <StackPanel>
