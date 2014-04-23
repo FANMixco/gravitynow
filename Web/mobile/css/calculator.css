@@ -1,0 +1,13 @@
+#result {
+    background-image: url('../img/background2.jpg');
+}
+
+#gResult {
+    text-align: center;
+}
+
+#lblResult {
+    font-weight: bold;
+    font-size: 4.5em;
+    color: white;
+}

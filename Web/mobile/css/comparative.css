@@ -1,0 +1,23 @@
+#result {
+    background-image: url('../img/background2.jpg');
+}
+
+#leftTab {
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+#rightTab {
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+#cmbPlanet1, #cmbPlanet2 {
+    width: 80%;
+}
+
+#imgPlanet2 {
+    display: none;
+}

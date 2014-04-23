@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    
+    <title></title>
+    <!--Styles-->
+    <link rel="stylesheet" type="text/css" href="../css/themes/default/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/calculator.css">
+
+    <!--Scripts-->
+	<script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.2.min.js"></script>
+	<script src="../js/ajaxFalse.js"></script>
+    <script src="../js/back.js"></script>
+    <script src="../js/realCHeight.js"></script>
+    <script src="../js/gravity.js"></script>
+    <script src="../js/calculator.js"></script>
+
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon"/>
+</head>
+
+<body>
+	<div data-role="page" id="Start">
+        <div data-role="header">
+            <a href="#" class="backButton" data-icon="back" data-theme="a">Back</a>
+            <h1 id="title">Calculator</h1>
+        </div>
+
+        <div data-role="content" id="result">
+            <form data-ajax="false">
+                <input id="txtLatitude" type="number" placeholder="Latitude" />
+                <input id="txtAltitude" type="number" placeholder="Altitude" />
+                <select id="cmbUnits">
+                    <option value="" selected="selected">units</option>
+                    <option value="m">metres (m)</option>
+                    <option value="ft">feet (ft)</option>
+                </select>
+                <div id="gResult">
+                    <label id="lblResult"></label>
+                </div>
+            </form>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="../index.html" data-icon="home" data-ajax="false">Home</a></li>
+                    <li><a href="#" data-icon="grid" data-ajax="false" class="ui-btn-active">Calculator</a></li>
+                    <li><a href="comparative.html" data-icon="gear" data-ajax="false">Comparative</a></li>
+                    <li><a href="about.html" data-icon="gear" data-ajax="false">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+#result {
+    text-align:center;
+    display:table;
+    width: 100%;
+    background-image: url('../img/background.jpg');
+}
+
+#data {
+    display: table-cell; 
+    vertical-align:middle;
+}
+
+#lblResult {
+    font-size: 10em;
+    background-image: url('../img/bg.png');
+}
+
+#location {
+    position:fixed;
+    left:0px;
+    text-align: center;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+#tblLocation {
+    width: 100%;
+    color:white; 
+}
