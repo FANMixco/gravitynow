@@ -21,4 +21,9 @@ $lang['downloadApp']	          = "Descarga la App";
 //Help
 $lang['helpMarker']	              = "Arrastra el marcador para calcular la gravedad en cualquier parte del mundo, &iexcl;en TIEMPO REAL! O simplemente has CLIC donde quieras!"; 
 
+$lang['previewApp']				  = "¿Quieres probar nuestra versi&oacute;n Express antes de descargarla?";
+$lang['clickHere']				  = "¡Pruebala aqu&iacute;!";
+$lang['gravityDesc']			  = "Gravity Now es una plataform dise&ntilde;ada durante Space Apps Challenge como respuesta al desaf&iacute;o Gravity Map, bajo la categor&iacute;a Earth Watch.";
+
+$lang['gravityDev']				  = "Dise&ntilde;o y Construcci&oacute;n:";
 ?>

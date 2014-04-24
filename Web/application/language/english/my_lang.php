@@ -21,6 +21,10 @@ $lang['downloadApp']	          = "Download the Apps";
 
 //Help
 $lang['helpMarker']	              = "Drag the marker to calculate the gravity through the world, in REAL TIME! Or just CLICK where you want!"; 
+$lang['previewApp']				  = "Do you want to test a preview before download it? Check our Express version! ";
+$lang['clickHere']				  = "Click Here";
 
+$lang ['gravityDesc'] = "Gravity Now! is a platform designed for Space Apps Challenge and the Challenge Gravity Map, Earth Watch category."; 
 
+$lang ['gravityDev'] = "Design & Development";
 ?>
