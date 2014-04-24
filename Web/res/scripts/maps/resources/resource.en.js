@@ -118,7 +118,7 @@ var data=
 	
 	slide44: "About developers.",
 	
-	lblDateTime: "Date and time registered: ", 
+	lblDateTime: "on: ", 
 	
 	lblLogDesc: "Welcome to our waiting list for The Wet Zone, our newest platform will be release in coming weeks, with this one we're going to able to improve places and allow organizations to have better studies. If you want to know more about it, Register it Now!", 
 	
@@ -128,5 +128,5 @@ var data=
 
     lblGravity: "The gravity registered here was: ",
 
-    lblUser: "and the person who register was: "
+    lblUser: "by: "
 };

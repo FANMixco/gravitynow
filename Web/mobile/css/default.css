@@ -1,0 +1,9 @@
+#about:after {
+    background: #232323 url("../img/AppBar/question.png") 50% 50% no-repeat;
+    background-size: 24px 24px;
+}
+
+#comparative:after {
+    background: #232323 url("../img/AppBar/interchange.png") 50% 50% no-repeat;
+    background-size: 24px 24px;
+}

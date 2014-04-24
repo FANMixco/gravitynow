@@ -97,7 +97,7 @@ $(function () {
                                       parseFloat(lng, 10)
                                   );
 
-			var messageTime = '$.Zebra_Dialog("'+ data.lblGravity + loc.gravity + data.lblUser + loc.fullname + '<br />' + data.lblDateTime + ' <br />' + loc.registrationDate + '");';
+			var messageTime = '$.Zebra_Dialog("'+ data.lblGravity + loc.gravity.toFixed(4) + " m/s&#178;, " + data.lblUser + " " + loc.fullname + ', ' + data.lblDateTime + '<br />' + loc.registered + '");';
 
 
             standardMarker = new nokia.maps.map.StandardMarker(markerCoords, { $click: messageTime });

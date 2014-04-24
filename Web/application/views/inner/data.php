@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="<?php echo base_url('res/styles/zebra_dialog.css'); ?>" type="text/css" media="screen" charset="utf-8"
+
 <div id="main">	
 	<div id="home" class="splash" style="opacity:1;">
 		<div id="mapContainer" style="height:90%;"></div>
