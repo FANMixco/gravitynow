@@ -18,6 +18,14 @@
     width: 80%;
 }
 
+#imgPlanet1, #imgPlanet2 {
+    margin: 0 auto;
+}
+
 #imgPlanet2 {
     display: none;
+}
+
+.content {
+    text-align: center;
 }

@@ -2,7 +2,7 @@ $(function () {
 
     var data = new gravityPlaces();
 
-    function hide(id,visible) {
+    function hide(id, visible) {
         $("#imgPlanet" + id).css("display", visible);
         $("#lblDesc" + id).css("display", visible);
         $("#lblGravity" + id).css("display", visible);
@@ -20,11 +20,11 @@ $(function () {
         var current = $(this).attr('id');
 
         if ($(this).val() == "") {
-            hide($(this).attr('id').replace("cmbPlanet", ""),"none");
+            hide($(this).attr('id').replace("cmbPlanet", ""), "none");
             return;
         }
 
-        hide($(this).attr('id').replace("cmbPlanet", ""),"block");
+        hide($(this).attr('id').replace("cmbPlanet", ""), "block");
 
         if (current == "cmbPlanet2")
             $("#imgPlanet2").css("display", "block");
@@ -45,19 +45,27 @@ $(function () {
 
             var result = data.comparedGravity($("#cmbPlanet2")[0].selectedIndex - 1, $("#cmbPlanet1")[0].selectedIndex - 1);
 
+            var color;
+
             $("#lblPercentaje").css("display", "block");
             switch (result) {
                 case 0:
+                    color = "#FE2E2E";
                     $("#lblResult").html("This gravity is smaller in:");
                     break;
                 case 1:
+                    color = "#01DF01";
                     $("#lblResult").html("This gravity is bigger in:");
                     break;
                 case 2:
+                    color = "#013ADF";
                     $("#lblResult").html("Gravity is the same.");
                     $("#lblPercentaje").css("display", "none");
                     break;
             }
+
+            $("#lblResult,#lblPercentaje").css("color", color);
+            $("#lblResult,#lblPercentaje").css("font-weight", "bold");
         }
     });
 });

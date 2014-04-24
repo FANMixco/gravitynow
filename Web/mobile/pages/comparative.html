@@ -9,6 +9,7 @@
     <!--Styles-->
     <link rel="stylesheet" type="text/css" href="../css/themes/default/jquery.mobile-1.4.2.min.css">
     <link rel="stylesheet" type="text/css" href="../css/comparative.css">
+    <link rel="stylesheet" type="text/css" href="../css/default.css">
 
     <!--Scripts-->
 	<script src="../js/jquery.min.js"></script>
@@ -25,7 +26,7 @@
 </head>
 
 <body>
-	<div data-role="page" id="Start">
+	<div data-role="page" id="Start" data-theme="b">
         <div data-role="header">
             <a href="#" class="backButton" data-icon="back" data-theme="a">Back</a>
             <h1 id="title">Comparative</h1>
@@ -47,11 +48,13 @@
                     <option value="Neptune">Neptune</option>
                     <option value="Pluto">Pluto</option>
                 </select>
-                <img id="imgPlanet1" alt="planet1" src="../img/Planets/earth.jpg" />
-                <label id="lblGravity1">9.798 m/s&#178;</label>
-                <label id="lblDesc1">planet</label>
-                <label id="lblResult"></label>
-                <label id="lblPercentaje"></label>
+                <div class="content">
+                    <img id="imgPlanet1" alt="planet1" src="../img/Planets/earth.jpg" />
+                    <label id="lblGravity1">9.798 m/s&#178;</label>
+                    <label id="lblDesc1">planet</label>
+                    <label id="lblResult"></label>
+                    <label id="lblPercentaje"></label>
+                </div>
             </div>
             <div id="rightTab">
                 <select id="cmbPlanet2">
@@ -68,9 +71,11 @@
                     <option value="Neptune">Neptune</option>
                     <option value="Pluto">Pluto</option>
                 </select>
-                <img id="imgPlanet2" alt="planet2" src="#" />
-                <label id="lblGravity2"></label>
-                <label id="lblDesc2"></label>
+                <div class="content">
+                    <img id="imgPlanet2" alt="planet2" src="#" />
+                    <label id="lblGravity2"></label>
+                    <label id="lblDesc2"></label>
+                </div>
             </div>
         </div>
 
@@ -79,8 +84,8 @@
                 <ul>
                     <li><a href="../index.html" data-icon="home" data-ajax="false">Home</a></li>
                     <li><a href="calculator.html" data-icon="grid" data-ajax="false">Calculator</a></li>
-                    <li><a href="#" data-icon="gear" data-ajax="false" class="ui-btn-active">Comparative</a></li>
-                    <li><a href="about.html" data-icon="gear" data-ajax="false">About</a></li>
+                    <li><a href="#" id="comparative" data-icon="custom" data-ajax="false" class="ui-btn-active">Comparative</a></li>
+                    <li><a href="about.html" id="about" data-icon="custom" data-ajax="false">About</a></li>
                 </ul>
             </div>
         </div>

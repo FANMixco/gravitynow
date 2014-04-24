@@ -18,12 +18,27 @@
 #location {
     position:fixed;
     left:0px;
-    text-align: center;
-    margin-left:auto; 
-    margin-right:auto;
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
 }
 
 #tblLocation {
-    width: 100%;
     color:white; 
+    font-weight: bold;
+    width:100%; 
+}
+
+#lblLongitude {
+    color: black;
+}
+
+#about:after {
+    background: #232323 url("../img/AppBar/question.png") 50% 50% no-repeat;
+    background-size: 24px 24px;
+}
+
+#comparative:after {
+    background: #232323 url("../img/AppBar/interchange.png") 50% 50% no-repeat;
+    background-size: 24px 24px;
 }

@@ -4,7 +4,7 @@ $(function () {
     function getLocation() {
         if (navigator.geolocation)
             navigator.geolocation.getCurrentPosition(showPosition, showError);
-        else 
+        else
             $("#lblResult").html("Geolocation is not supported by this browser.");
     }
 
@@ -38,15 +38,22 @@ $(function () {
 
                 $("#lblAltitude").html("altitude: <br />" + longitude.toFixed(0) + " m");
 
-                var p = $(".ui-footer");
-                var position = p.position();
-
-                $("#location").css("top", position.top - $("#tblLocation").height());
-
+                changeLocationTable();
             }
         });
 
     }
+
+    function changeLocationTable() {
+        var p = $(".ui-footer");
+        var position = p.position();
+
+        $("#location").css("top", position.top - $("#tblLocation").height());
+    }
+
+    $(window).resize(function () {
+        changeLocationTable();
+    });
 
     function showError(error) {
         switch (error.code) {
