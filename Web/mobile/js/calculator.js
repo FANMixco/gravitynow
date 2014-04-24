@@ -1,4 +1,6 @@
 $(function () {
+    jQuery("#lblResult").fitText();
+
     $("#txtAltitude,#txtLatitude").focusout(function () {
         getResult();
     });
@@ -8,8 +10,8 @@ $(function () {
     });
 
     function getResult() {
-        var lat = $("#txtAltitude").val();
-        var alt = $("#txtLatitude").val();
+        var lat = $("#txtLatitude").val();
+        var alt = $("#txtAltitude").val();
         var units = $("#cmbUnits").val();
 
         if (lat != "" && alt != "" && units != "") {

@@ -1,4 +1,6 @@
 $(function () {
+    jQuery("#lblResult").fitText();
+
     getLocation();
 
     function getLocation() {

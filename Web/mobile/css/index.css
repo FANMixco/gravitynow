@@ -8,10 +8,12 @@
 #data {
     display: table-cell; 
     vertical-align:middle;
+    position: relative;
+    left: -0.940em;
 }
 
 #lblResult {
-    font-size: 10em;
+    /*font-size: 10em;*/
     background-image: url('../img/bg.png');
 }
 
@@ -27,10 +29,6 @@
     color:white; 
     font-weight: bold;
     width:100%; 
-}
-
-#lblLongitude {
-    color: black;
 }
 
 #about:after {
