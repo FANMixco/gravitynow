@@ -21,7 +21,7 @@
 		</div>
 		
 		<div id="help1" class="help">
-			<p><?php echo $this->lang->line('helpMarker'); ?></p>
+			<p><?php echo $this->lang->line('helpZoom'); ?></p>
 		</div>
 	</div>
 </div>
@@ -37,3 +37,13 @@
 	</ul>
 </div>
 <script type="text/javascript" src="<?php echo base_url('res/scripts/maps/mapData.js'); ?>"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	setTimeout(function(){
+		$('#help1').css('top','5%');
+	},1000);
+	setTimeout(function(){
+		$('#help1').css('top','-100%');
+	},11000);
+});
+</script>

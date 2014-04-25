@@ -1,3 +1,5 @@
+var imgLocNew;
+
 nokia.Settings.set("app_id", "xfWoSkntk0Ao3r8C6wZ6");
 nokia.Settings.set("app_code", "snDmPQuP-71myYTab77aIA");
 
@@ -47,7 +49,7 @@ display.objects.add(draggableMarker);
 function getGravity(latitude, longitude, altitude)
 {
 	//Fxs
-	$('#help1').css('top','-25%');
+	$('#help1').css('top','-100%');
 	$('#logo-bg').removeClass('hidden');
 	$('#logo').css('opacity',0);
 	setTimeout(function(){
@@ -62,15 +64,10 @@ function getGravity(latitude, longitude, altitude)
 
 		var altitude = data.srtm3;
 
-		var IGF = 9.780327 * (1 + 0.0053024 * Math.pow(Math.sin(latitude), 2) - 0.0000058 * Math.pow(Math.sin(2 * latitude), 2));
-
-		var FAC = -3.086 * Math.pow(10, -6) * altitude;
-
-		var g = IGF + FAC;		
+		var g = calculateGravity(latitude, altitude);
 		
 		//$("#Value").text("longitude: "+longitude+" latitude: "+latitude+" altitude: "+altitude+" gravity: "+g);
 		$("#result").html(Number(g.toString().match(/^\d+(?:\.\d{0,2})?/))+' m/s&sup2;');
-//		console.log(data);
 	});
 }
 
@@ -214,12 +211,7 @@ function getCGravity(latitude, longitude,evt)
 
 		var altitude = data.srtm3;
 
-		var IGF = 9.780327 * (1 + 0.0053024 * Math.pow(Math.sin(latitude), 2) - 0.0000058 * Math.pow(Math.sin(2 * latitude), 2));
-
-		var FAC = -3.086 * Math.pow(10, -6) * altitude;
-
-		var g = IGF + FAC;
-
+		var g = calculateGravity(latitude, altitude);
 		
 		var coord = display.pixelToGeo(evt.displayX, evt.displayY),
 			bubbleMarker = new InfoBubbleMarker(
@@ -228,7 +220,7 @@ function getCGravity(latitude, longitude,evt)
 					"gravity: "+g.toFixed(6)+"m/s&sup2;",
 					{ 
 						eventDelegationContainer: markersContainer,
-						brush: { color: "#1080dd" },
+						brush: { color: "#0FDF43" },
 						text: (markersContainer.objects.getLength() + 1)
 					}
 				);
@@ -238,5 +230,89 @@ function getCGravity(latitude, longitude,evt)
 	
 		}
 	});
+  }
 
-}
+  	
+	function calculateGravity(lat, alt)
+	{
+		var IGF = 9.780327 * (1 + 0.0053024 * Math.pow(Math.sin(lat), 2) - 0.0000058 * Math.pow(Math.sin(2 * lat), 2));
+
+		var FAC = -3.086 * Math.pow(10, -6) * alt;
+
+		var g = IGF + FAC;
+
+		return g;
+	}
+	
+	$("#myLocation").click(function () {
+		if ($(this).attr("src") == imgLocNew)
+			return;
+	
+        if (navigator.geolocation)
+            navigator.geolocation.getCurrentPosition(showPosition,showError);
+        else
+            alert("Geolocation is not supported by this browser.");
+    });
+
+    function showPosition(position) {
+        $.ajax({
+	      url: "http://api.geonames.org/srtm3JSON?lat="+position.coords.latitude+"&lng="+position.coords.longitude+"&username=fanmixco",
+	      async: false,
+	      dataType: 'json',
+	      success: function (data) {
+		  
+				console.log(data);
+		        var latitude = data.lat;
+
+		        var longitude = data.lng;
+
+		        var altitude = data.srtm3;
+
+                var g = calculateGravity(latitude, altitude);
+
+                var coord = new nokia.maps.geo.Coordinate(latitude, longitude),
+                standardMarker = new nokia.maps.map.StandardMarker(coord, {text: "L"});
+                display.objects.add(standardMarker);
+
+                var g = calculateGravity(latitude, altitude);
+
+				bubbleMarker2 = new InfoBubbleMarker(
+					coord,
+					infoBubbles,
+					"gravity: "+g.toFixed(6)+"m/s&sup2;",
+					{ 
+						eventDelegationContainer: markersContainer,
+                        text: "L" ,
+						brush: { color: '#1080dd' }						
+					}
+				);
+						
+				// Add bubbleMarker to the markers container so it will be rendered onto the map
+//				markersContainer.objects.add(bubbleMarker);
+			
+                display.set('zoomLevel', 16);
+            	display.set('center', coord);
+				
+				$("#myLocation").attr("src", imgLocNew);
+          }
+        });
+    }
+	
+	function showError(error)
+	{
+		switch(error.code) 
+		{
+			case error.PERMISSION_DENIED:
+			  alert("User denied the request for Geolocation.");
+			  break;
+			case error.POSITION_UNAVAILABLE:
+			  alert("Location information is unavailable..");
+			  break;
+			case error.TIMEOUT:
+			  alert("The request to get user location timed out.");
+			  break;
+			case error.UNKNOWN_ERROR:
+			  alert("An unknown error occurred.");
+			  break;
+		}
+	}

@@ -20,7 +20,8 @@ $lang['gravityNow']	              = "It is an educational platform that aims to 
 $lang['downloadApp']	          = "Download the Apps";
 
 //Help
-$lang['helpMarker']	              = "Drag the marker to calculate the gravity through the world, in REAL TIME! Or just CLICK where you want!"; 
+$lang['helpMarker']	              = "Drag the marker to calculate the gravity through the world, in REAL TIME! Or just CLICK where you want!";
+$lang['helpZoom']	              = "Zoom in to get the detail of the places where the gravity has been calculated and its value."; 
 $lang['previewApp']				  = "Do you want to test a preview before download it? Check our Express version! ";
 $lang['clickHere']				  = "Click Here";
 

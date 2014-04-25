@@ -19,7 +19,8 @@ $lang['mnuAbout']	              = "Acerca";
 $lang['gravityNow']	              = "Es una plataforma educativa que pretende ser la herramienta #1 para la ense&ntilde;anza de las ciencias f&iacute;sicas relacionadas con la gravedad. Gravity Now se vale de un avanzado sistema de mapeo y un procesamiento en tiempo real para el c&aacute;lculo interactivo de la gravedad en cualquier punto del planeta. Adem&aacute;s, Gravity Now explica de manera breve y f&aacute;cilmente comprensible, el fundamento te&oacute;rico utilizado para realizar los c&aacute;lculos mostrados en el sistema. De esta manera, se complementa la teor&iacute;a con la pr&aacute;ctica fomentando la educaci&oacute;n -y la motivaci&oacute;n- en las personas."; 
 $lang['downloadApp']	          = "Descarga la App";
 //Help
-$lang['helpMarker']	              = "Arrastra el marcador para calcular la gravedad en cualquier parte del mundo, &iexcl;en TIEMPO REAL! O simplemente has CLIC donde quieras!"; 
+$lang['helpMarker']	              = "Arrastra el marcador para calcular la gravedad en cualquier parte del mundo, &iexcl;en TIEMPO REAL! O simplemente has CLIC donde quieras!";
+$lang['helpZoom']	              = "Has zoom para obtener el detalle de los puntos en los que se ha calculado la gravedad y su valor."; 
 
 $lang['previewApp']				  = "¿Quieres probar nuestra versi&oacute;n Express antes de descargarla?";
 $lang['clickHere']				  = "¡Pruebala aqu&iacute;!";
