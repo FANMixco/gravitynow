@@ -89,6 +89,20 @@
 #vertMnu{.trans(all); z-index:-999999; li{float:none;a{text-align:center;}} }
 
  
+#lang{
+	position:absolute; top:60%; left:95.5%; cursor:pointer; z-index:9999999999;
+	@media (max-width:970px){left:85%;}		
+}
+
+a.hfx img{
+	.trans(all, ease-in,0.2s);
+	&:hover{
+	transform:scale(1.5);
+	-ms-transform:scale(1.5); /* IE 9 */
+	-webkit-transform:scale(1.5); /* Opera, Chrome, and Safari */
+	}
+}	
+ 
  #logo, #logo-bg, #bottomMnu{
  	@media (max-width:1300px){display:none;}
  }

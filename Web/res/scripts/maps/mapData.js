@@ -57,7 +57,7 @@ $(function () {
     var locations;
     function createMarkers(value) {
         $.ajax({
-            url: "http://gnow.hostingsiteforfree.com/webServices/getLocation.php",
+            url: "http://gravitynow.bl.ee/webServices/getLocation.php",
             type: "GET",
             dataType: "json",
             success: function (source) {

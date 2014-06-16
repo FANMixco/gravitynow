@@ -108,7 +108,7 @@ class CI_Router {
 		// If this feature is enabled, we will gather the directory/class/method a little differently
 		$segments = array();
 		if ($this->config->item('enable_query_strings') === TRUE AND isset($_GET[$this->config->item('controller_trigger')]))
-		{
+		{			
 			if (isset($_GET[$this->config->item('directory_trigger')]))
 			{
 				$this->set_directory(trim($this->uri->_filter_uri($_GET[$this->config->item('directory_trigger')])));
@@ -145,15 +145,14 @@ class CI_Router {
 		// the URI doesn't correlated to a valid controller.
 		$this->default_controller = ( ! isset($this->routes['default_controller']) OR $this->routes['default_controller'] == '') ? FALSE : strtolower($this->routes['default_controller']);
 
-		// Were there any query string segments?  If so, we'll validate them and bail out since we're done.
+		// Were there any query string segments?  If so, we'll validate them and bail out since we're done.		
 		if (count($segments) > 0)
 		{
 			return $this->_validate_request($segments);
 		}
 
 		// Fetch the complete URI string
-		$this->uri->_fetch_uri_string();
-
+		$this->uri->_fetch_uri_string();		
 		// Is there a URI string? If not, the default controller specified in the "routes" file will be shown.
 		if ($this->uri->uri_string == '')
 		{
@@ -162,7 +161,6 @@ class CI_Router {
 
 		// Do we need to remove the URL suffix?
 		$this->uri->_remove_url_suffix();
-
 		// Compile the segments into an array
 		$this->uri->_explode_segments();
 
@@ -224,6 +222,7 @@ class CI_Router {
 	 */
 	function _set_request($segments = array())
 	{
+	
 		$segments = $this->_validate_request($segments);
 
 		if (count($segments) == 0)
@@ -329,7 +328,13 @@ class CI_Router {
 
 			return $segments;
 		}
-
+		
+		//The last try, maybe a redirection with the routes file?
+		// Is there a literal match?  If so we're done
+		if (isset($this->routes[$segments[0]]))
+		{
+			return $this->_set_request(explode('/', $this->routes[$segments[0]]));
+		}
 
 		// If we've gotten this far it means that the URI does not correlate to a valid
 		// controller class.  We will now see if there is an override
@@ -342,7 +347,6 @@ class CI_Router {
 
 			return $x;
 		}
-
 
 		// Nothing else to do at this point but show a 404
 		show_404($segments[0]);
@@ -363,8 +367,7 @@ class CI_Router {
 	function _parse_routes()
 	{
 		// Turn the segment array into a URI string
-		$uri = implode('/', $this->uri->segments);
-
+		$uri = implode('/', $this->uri->segments);		
 		// Is there a literal match?  If so we're done
 		if (isset($this->routes[$uri]))
 		{
@@ -373,7 +376,7 @@ class CI_Router {
 
 		// Loop through the route array looking for wild-cards
 		foreach ($this->routes as $key => $val)
-		{
+		{			
 			// Convert wild-cards to RegEx
 			$key = str_replace(':any', '.+', str_replace(':num', '[0-9]+', $key));
 
@@ -382,10 +385,10 @@ class CI_Router {
 			{
 				// Do we have a back-reference?
 				if (strpos($val, '$') !== FALSE AND strpos($key, '(') !== FALSE)
-				{
-					$val = preg_replace('#^'.$key.'$#', $val, $uri);
+				{					
+					$val = preg_replace('#^'.$key.'$#', $val, $uri);					
 				}
-
+				
 				return $this->_set_request(explode('/', $val));
 			}
 		}

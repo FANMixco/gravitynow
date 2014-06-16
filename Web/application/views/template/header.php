@@ -6,8 +6,12 @@
 	<!-- Styles -->
 	<link rel="stylesheet" href="<?php echo base_url('res/styles/gravityNow.css'); ?>" type="text/css" media="screen" charset="utf-8">	
 	<!-- JS -->
+	<script type="text/javascript" src="<?php echo base_url('res/scripts/mobile.js'); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url('res/scripts/jquery-1.9.0.min.js'); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url('res/scripts/jquery-migrate-1.2.1.min.js'); ?>"></script>
+
+    <link rel="icon" href="<?php echo base_url('res/imgs/favicon.ico'); ?>" type="image/x-icon"/>
+    <link rel="shortcut icon" href="<?php echo base_url('res/imgs/favicon.ico'); ?>" type="image/x-icon"/>
 	<!-- Plugins & other scripts -->
 	<?php if (isset($scripts)) echo $scripts;?>
 	

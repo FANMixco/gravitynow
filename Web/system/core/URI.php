@@ -300,7 +300,7 @@ class CI_URI {
 			$val = trim($this->_filter_uri($val));
 
 			if ($val != '')
-			{
+			{				
 				$this->segments[] = $val;
 			}
 		}

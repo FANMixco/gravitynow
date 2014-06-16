@@ -6,7 +6,7 @@
 
 	$uid=$_GET['uid'];
 	
-	$db = new Database('mysql.1freehosting.com', 'u914646483_gnow', 'ElSalvador123', 'u914646483_gnow');
+	$db = new Database('mysql.hostinger.es', 'u395927577_gnow', 'ElSalvador123', 'u395927577_gnow');
 	$db->connect();
 	
     $sql = "SELECT fullname, location, latitude, longitude, altitude, gravity, L.registered FROM locations L LEFT JOIN user U ON U.iduser = L.idUser LEFT JOIN userDetails UD ON U.iduser=UD.iduser";

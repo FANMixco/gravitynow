@@ -6,7 +6,7 @@
 	$email=$_GET['email'];
 	$fullname=$_GET['fullname'];
 	
-	$db = new Database('mysql.1freehosting.com', 'u914646483_gnow', 'ElSalvador123', 'u914646483_gnow');
+	$db = new Database('mysql.hostinger.es', 'u395927577_gnow', 'ElSalvador123', 'u395927577_gnow');
 	$db->connect();
 	
 	echo $db->register($email,$fullname);
