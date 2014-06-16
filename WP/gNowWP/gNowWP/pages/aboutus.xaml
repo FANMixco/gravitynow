@@ -37,8 +37,12 @@
                         <TextBlock Height="Auto" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.lblVisit, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Margin="12,0,0,0" FontFamily="SegoeUI" FontWeight="Bold" FontSize="35" />
                         <TextBlock Height="Auto" x:Name="txtSite" TextWrapping="Wrap" Text="gravitynow.tk" VerticalAlignment="Top" Width="Auto" Margin="12,0,0,0" FontFamily="Segoe UI Semilight" FontSize="25" Foreground="{StaticResource PhoneAccentBrush}" Tap="TextBlock_Tap_1" />
                         <TextBlock Height="Auto" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.lblGreeting, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Margin="12,0,0,0" FontFamily="SegoeUI" FontWeight="Bold" FontSize="35" />
-                        <TextBlock Height="Auto" TextWrapping="Wrap" Text="NASA, GeoCensos, La Casa Tomada," VerticalAlignment="Top" Margin="12,0,0,0" FontFamily="Segoe UI Semilight" FontSize="25" />
+                        <TextBlock Height="Auto" TextWrapping="Wrap" Text="NASA, Microsoft El Salvador, La Casa Tomada, GeoCensos" VerticalAlignment="Top" Margin="12,0,0,0" FontFamily="Segoe UI Semilight" FontSize="25" />
+                        <TextBlock Height="Auto" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.lblSpecialGreeting, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Margin="12,0,0,0" FontFamily="SegoeUI" FontWeight="Bold" FontSize="35" />
+                        <TextBlock Height="Auto" TextWrapping="Wrap" Text="Microsoft Student Partners" VerticalAlignment="Top" Width="Auto" Margin="12,0,0,0" FontFamily="Segoe UI Semilight" FontSize="25" Foreground="{StaticResource PhoneAccentBrush}" Tap="TextBlock_Tap_6" />
                         <TextBlock Height="Auto" TextWrapping="Wrap" Text="SensorsOne" VerticalAlignment="Top" Width="Auto" Margin="12,0,0,0" FontFamily="Segoe UI Semilight" FontSize="25" Foreground="{StaticResource PhoneAccentBrush}" Tap="TextBlock_Tap_3" />
+                        <TextBlock Height="Auto" TextWrapping="Wrap" Text="OpenStreetMap" VerticalAlignment="Top" Width="Auto" Margin="12,0,0,0" FontFamily="Segoe UI Semilight" FontSize="25" Foreground="{StaticResource PhoneAccentBrush}" Tap="TextBlock_Tap_4" />
+                        <TextBlock Height="Auto" TextWrapping="Wrap" Text="GeoNames" VerticalAlignment="Top" Width="Auto" Margin="12,0,0,0" FontFamily="Segoe UI Semilight" FontSize="25" Foreground="{StaticResource PhoneAccentBrush}" Tap="TextBlock_Tap_5" />
                     </StackPanel>
 
                 </Grid>

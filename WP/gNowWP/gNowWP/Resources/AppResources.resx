@@ -413,4 +413,19 @@
   <data name="lblGravity2" xml:space="preserve">
     <value>Gravity:</value>
   </data>
+  <data name="lblLocation" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="lblLocationSearch" xml:space="preserve">
+    <value>Location to search...</value>
+  </data>
+  <data name="lblSearch" xml:space="preserve">
+    <value>search</value>
+  </data>
+  <data name="lblSpecialGreeting" xml:space="preserve">
+    <value>Special Greetings:</value>
+  </data>
+  <data name="lblTryAgain" xml:space="preserve">
+    <value>Please try again later.</value>
+  </data>
 </root>

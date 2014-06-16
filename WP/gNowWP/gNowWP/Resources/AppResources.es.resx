@@ -413,4 +413,19 @@
   <data name="menuAbout" xml:space="preserve">
     <value>acerca de</value>
   </data>
+  <data name="lblLocation" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="lblLocationSearch" xml:space="preserve">
+    <value>Dirección a buscar...</value>
+  </data>
+  <data name="lblSearch" xml:space="preserve">
+    <value>buscar</value>
+  </data>
+  <data name="lblSpecialGreeting" xml:space="preserve">
+    <value>Agradecimientos Especiales a:</value>
+  </data>
+  <data name="lblTryAgain" xml:space="preserve">
+    <value>Por favor intente en otro momento.</value>
+  </data>
 </root>

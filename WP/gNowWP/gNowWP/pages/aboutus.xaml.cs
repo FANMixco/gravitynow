@@ -35,6 +35,27 @@ namespace gNowWP.pages
             wbt.Show();
         }
 
+        private void TextBlock_Tap_4(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            WebBrowserTask wbt = new WebBrowserTask();
+            wbt.Uri = new Uri("http://www.openstreetmap.org", UriKind.Absolute);
+            wbt.Show();
+        }
+
+        private void TextBlock_Tap_5(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            WebBrowserTask wbt = new WebBrowserTask();
+            wbt.Uri = new Uri("http://www.geonames.org/", UriKind.Absolute);
+            wbt.Show();
+        }
+
+        private void TextBlock_Tap_6(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            WebBrowserTask wbt = new WebBrowserTask();
+            wbt.Uri = new Uri("http://www.microsoftstudentpartners.com/", UriKind.Absolute);
+            wbt.Show();
+
+        }
 
     }
 }

@@ -21,6 +21,10 @@ using Microsoft.Phone.Reactive;
 using Windows.Devices.Geolocation;
 using Microsoft.Phone.Tasks;
 using System.Net.NetworkInformation;
+using Microsoft.Phone.Maps.Services;
+using System.Device.Location;
+using System.Windows.Input;
+using System.Windows.Documents;
 
 namespace gNowWP
 {
@@ -28,6 +32,29 @@ namespace gNowWP
     {
         private List<UserInfo> data;
         gravity G = new gravity();
+
+        public class resultLocation
+        {
+            public string place_id { get; set; }
+            public string licence { get; set; }
+            public string osm_type { get; set; }
+            public string osm_id { get; set; }
+            public List<string> boundingbox { get; set; }
+            public string lat { get; set; }
+            public string lon { get; set; }
+            public string display_name { get; set; }
+            public string @class { get; set; }
+            public string type { get; set; }
+            public double importance { get; set; }
+            public string icon { get; set; }
+        }
+
+        public class resultData
+        {
+            public int alt { get; set; }
+            public double lng { get; set; }
+            public double lat { get; set; }
+        }
 
         private void clean()
         {
@@ -169,7 +196,7 @@ namespace gNowWP
                 }
             }
 
-            if (cStatus == "true" && exist>0)
+            if (cStatus == "true" && exist > 0)
             {
                 string query = "SELECT * FROM gravityData WHERE latitude=" + lblLatitude.Text + " AND longitude=" + lblLongitude.Text + " AND altitude=" + lblAltitude.Text;
 
@@ -235,7 +262,7 @@ namespace gNowWP
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Terminate();
-        }  
+        }
 
         public string getUResult(bool metres)
         {
@@ -475,7 +502,7 @@ namespace gNowWP
 
                 if (lblUnitsG.Text == " m/s²")
                 {
-                    gravity = Math.Round( G.changeToFeet(Convert.ToDouble(lblGravity.Text)),data[0].Ndecimal);
+                    gravity = Math.Round(G.changeToFeet(Convert.ToDouble(lblGravity.Text)), data[0].Ndecimal);
                     units = getUResult(false);
 
                     altitude = Math.Round(G.changeToFeet(altitude), 0);
@@ -488,7 +515,7 @@ namespace gNowWP
                     altitude = Math.Round(G.changeToMetres(altitude), 0);
                 }
 
-                lblAltitudeS.Text = AppResources.lblAltitude + ":\n" + altitude.ToString(); 
+                lblAltitudeS.Text = AppResources.lblAltitude + ":\n" + altitude.ToString();
                 lblUnitsG.Text = units;
                 lblGravity.Text = gravity.ToString();
             }
@@ -535,7 +562,7 @@ namespace gNowWP
             {
 
                 int gCompared = data.comparedGravity(cmbPlaces1.SelectedIndex, cmbPlaces2.SelectedIndex);
-                double gPercentage=0;
+                double gPercentage = 0;
 
                 gPercentage = data.percentageGravity(cmbPlaces1.SelectedIndex, cmbPlaces2.SelectedIndex);
 
@@ -564,7 +591,7 @@ namespace gNowWP
 
         private void calculate()
         {
-            if (!(String.IsNullOrEmpty(txtLatitude.Text) || String.IsNullOrEmpty(txtAltitude.Text)) && cmbUnits.SelectedIndex>-1)
+            if (!(String.IsNullOrEmpty(txtLatitude.Text) || String.IsNullOrEmpty(txtAltitude.Text)) && cmbUnits.SelectedIndex > -1)
             {
                 lblResult.Visibility = Visibility.Visible;
                 lblUnitsC.Visibility = Visibility.Visible;
@@ -624,6 +651,86 @@ namespace gNowWP
                 if (!String.IsNullOrEmpty(lblGravity2.Text))
                     lblGravity2.Text = G.changeToFeet(Convert.ToDouble(lblGravity2.Text)).ToString();
             }
+
         }
+
+        private void txtLocation_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+
+            if (NetworkInterface.GetIsNetworkAvailable())
+            {
+                if (e.Key == Key.Enter)
+                {
+                    string address = txtLocation.Text;
+
+                    if (String.IsNullOrEmpty(address))
+                        return;
+
+                    rtxtResult.Blocks.Clear();
+
+                    WebClient w = new WebClient();
+
+                    Observable
+                    .FromEvent<DownloadStringCompletedEventArgs>(w, "DownloadStringCompleted")
+                    .Subscribe(r =>
+                    {
+                        try
+                        {
+                            var deserialized = JsonConvert.DeserializeObject<List<resultLocation>>(r.EventArgs.Result);
+
+                            for (int i = 0; i < deserialized.Count; i++)
+                                setDataLocation(deserialized[i]);
+                        }
+                        catch
+                        {
+                            MessageBox.Show(AppResources.lblTryAgain, "Error", MessageBoxButton.OK);
+                        }
+                    });
+                    w.DownloadStringAsync(
+                    new Uri("http://nominatim.openstreetmap.org/search?q=" + address + "&format=json"));
+                    searchPivot.Focus();
+
+                }
+            }
+            else
+                MessageBox.Show(AppResources.errInternet, "Error", MessageBoxButton.OK);
+        }
+
+        private void setDataLocation(resultLocation data)
+        {
+            WebClient w = new WebClient();
+
+            Observable
+            .FromEvent<DownloadStringCompletedEventArgs>(w, "DownloadStringCompleted")
+            .Subscribe(r =>
+            {
+                var deserialized = JsonConvert.DeserializeObject<resultData>(r.EventArgs.Result);
+
+                gravity G = new gravity(deserialized.lat, 0, deserialized.alt);
+
+                Paragraph newP = new Paragraph();
+
+                Hyperlink link = new Hyperlink();
+                link.Inlines.Add(data.display_name);
+                link.NavigateUri = new Uri("http://bing.com/maps/?cp=" + data.lat + "~" + data.lon + "&lvl=16&sp=point." + data.lat + "_" + data.lon + "_");
+                link.TargetName = "_blank";
+                link.Foreground = (Brush)Application.Current.Resources["PhoneAccentBrush"];
+
+                newP.Inlines.Add(AppResources.lblLocation + ": ");
+                newP.Inlines.Add(link);
+                newP.Inlines.Add("\n");
+                newP.Inlines.Add(AppResources.lblLatitude + ": " + data.lat + "°");
+                newP.Inlines.Add("\n");
+                newP.Inlines.Add(AppResources.lblLongitude + ": " + data.lon + "°");
+                newP.Inlines.Add("\n");
+                newP.Inlines.Add(AppResources.lblGravity2 + " " + Math.Round(G.getGravity(), 6).ToString() + " m/s²");
+                newP.Inlines.Add("\n\r");
+                rtxtResult.Blocks.Add(newP);
+
+            });
+            w.DownloadStringAsync(
+            new Uri("http://api.geonames.org/srtm3JSON?lat=" + data.lat + "&lng=" + data.lon + "&username=fanmixco"));
+        }
+
     }
 }

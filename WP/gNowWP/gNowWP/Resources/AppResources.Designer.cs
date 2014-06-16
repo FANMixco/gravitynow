@@ -664,6 +664,24 @@ namespace gNowWP.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string lblLocation {
+            get {
+                return ResourceManager.GetString("lblLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location to search....
+        /// </summary>
+        public static string lblLocationSearch {
+            get {
+                return ResourceManager.GetString("lblLocationSearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to login.
         /// </summary>
         public static string lblLogin {
@@ -691,6 +709,15 @@ namespace gNowWP.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to search.
+        /// </summary>
+        public static string lblSearch {
+            get {
+                return ResourceManager.GetString("lblSearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Social Networks.
         /// </summary>
         public static string lblSocial {
@@ -700,11 +727,29 @@ namespace gNowWP.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Special Greetings:.
+        /// </summary>
+        public static string lblSpecialGreeting {
+            get {
+                return ResourceManager.GetString("lblSpecialGreeting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hey, check your gravity!.
         /// </summary>
         public static string lblSubject {
             get {
                 return ResourceManager.GetString("lblSubject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please try again later..
+        /// </summary>
+        public static string lblTryAgain {
+            get {
+                return ResourceManager.GetString("lblTryAgain", resourceCulture);
             }
         }
         

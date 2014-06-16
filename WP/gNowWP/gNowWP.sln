@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gNowWP", "gNowWP\gNowWP.csproj", "{9B8675F5-2B4A-4A91-8D41-7FA599693B0C}"
 EndProject
@@ -46,9 +46,9 @@ Global
 		{9B8675F5-2B4A-4A91-8D41-7FA599693B0C}.Release|Win32.ActiveCfg = Release|x86
 		{9B8675F5-2B4A-4A91-8D41-7FA599693B0C}.Release|Win32.Build.0 = Release|x86
 		{9B8675F5-2B4A-4A91-8D41-7FA599693B0C}.Release|Win32.Deploy.0 = Release|x86
-		{9B8675F5-2B4A-4A91-8D41-7FA599693B0C}.Release|x86.ActiveCfg = Release|ARM
-		{9B8675F5-2B4A-4A91-8D41-7FA599693B0C}.Release|x86.Build.0 = Release|ARM
-		{9B8675F5-2B4A-4A91-8D41-7FA599693B0C}.Release|x86.Deploy.0 = Release|ARM
+		{9B8675F5-2B4A-4A91-8D41-7FA599693B0C}.Release|x86.ActiveCfg = Release|x86
+		{9B8675F5-2B4A-4A91-8D41-7FA599693B0C}.Release|x86.Build.0 = Release|x86
+		{9B8675F5-2B4A-4A91-8D41-7FA599693B0C}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
