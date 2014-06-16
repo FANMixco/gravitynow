@@ -4,6 +4,7 @@ $(function () {
             return;
 
         if (e.which == 13) {
+            $("#result").empty();
             $.ajax({
                 url: "http://nominatim.openstreetmap.org/search?q=" + $("#txtSearch").val() + "&format=json",
                 async: false,
@@ -23,7 +24,7 @@ $(function () {
             async: false,
             dataType: 'json',
             success: function (deserialized) {
-                var completeString="";
+                var completeString = "";
 
                 var g = new gravity();
 
@@ -37,7 +38,9 @@ $(function () {
 
                 var gResult = g.getGravity();
 
-                completeString += "<b>Address: </b>" + data.display_name + "<br />";
+                completeString += "<b>Address: </b> <a href='http://bing.com/maps/?cp=" + latitude + "~" + longitude + "&lvl=16&sp=point." + latitude + "_" + longitude + "_' target='_blank'>"
++data.display_name + "</a><br />";
+                //                completeString += "<b>Address: </b>" + data.display_name + "<br />";
                 completeString += "<b>Latitude: </b>" + latitude.toFixed(6) + "&deg;<br />";
                 completeString += "<b>Longitude: </b>" + longitude.toFixed(6) + "&deg;<br />";
                 completeString += "<b>Gravity: </b>" + gResult.toFixed(6) + " m/s&#178;<br /><br />";
