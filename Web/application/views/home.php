@@ -26,23 +26,18 @@
 			<p><?php echo $this->lang->line('helpMarker'); ?></p>
 		</div>
 		<div id="geolocation">
-			<img id="myLocation" title="To get my location!" style="max-width:30px;" src="<?php echo base_url('res/imgs/geolocation.png'); ?>" />
+			<img id="myLocation" title="<?php echo $this->lang->line('geolocationTip'); ?>" src="<?php echo base_url('res/imgs/geolocation.png'); ?>" />
+			<img id="search" title="<?php echo $this->lang->line('searchTip'); ?>" src="<?php echo base_url('res/imgs/search.png'); ?>" />
 		</div>
-	
+		<input id="txtSearch" type="text" class="searchHidden" />
 <script type="text/javascript" src="<?php echo base_url('res/scripts/maps/draggableMarker.js'); ?>"></script>
-<style type="text/css">
-	#geolocation{
- 	position:absolute; top:80%; left:95.5%; cursor:pointer; z-index:9999999999;
- 	background-color:#159ECF;
- 	border-radius:25px;
- 	padding:5px; 	
-	@media (max-width:970px){
-		#geolocation{left:85%;}		
-	}	
-}
-</style>
 <script>
 $(function() {
 	imgLocNew = "<?php echo base_url('res/imgs/geolocation2.png'); ?>";
 });
 </script>
+ <style>
+.ui-autocomplete-loading {
+background: white url("<?php echo base_url('res/imgs/ui-anim_basic_16x16.gif'); ?>") right center no-repeat;
+}
+</style>

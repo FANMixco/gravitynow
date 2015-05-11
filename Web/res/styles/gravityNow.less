@@ -86,16 +86,32 @@
  	background-image:url('../imgs/earth-bg.jpg');
 }
 #bottomMnu{.trans(opacity, ease-in,1s);@media (max-width:1300px){display:none;}}
-#vertMnu{.trans(all, ease-in,1s); li{float:none;}}
+#vertMnu{.trans(all); z-index:-999999; li{float:none;a{text-align:center;}} }
 
+ 
+#lang{
+	position:absolute; top:60%; left:95.5%; cursor:pointer; z-index:9999999999;
+	@media (max-width:970px){left:85%;}		
+}
+
+a.hfx img{
+	.trans(all, ease-in,0.2s);
+	&:hover{
+	transform:scale(1.5);
+	-ms-transform:scale(1.5); /* IE 9 */
+	-webkit-transform:scale(1.5); /* Opera, Chrome, and Safari */
+	}
+}	
  
  #logo, #logo-bg, #bottomMnu{
  	@media (max-width:1300px){display:none;}
  }
  
-#content-main, #mapContainer{
- 	@media (max-width:1300px){height:100%;}
+#content-main, #mapContainer{	
+ 	@media (max-width:1300px){height:100% !important; }
  }
+ 
+ #main{z-index:3;}
  
  .help{
  	background-color:@link-color; 
@@ -124,7 +140,19 @@
  #descContainer{top:45%; position:relative;.trans(all, ease-in,1s); height:0%;}
  #pDesc{font-size:36px;}
  
- #mobile-menu{position:absolute; top:93%; left:95%; cursor:pointer;}
+ #mobile-menu{
+ 	position:absolute; top:93%; left:95%; cursor:pointer; z-index:9999999999;
+	@media (max-width:970px){left:85%;}
+}
+
+#geolocation{
+ 	position:absolute; top:80%; left:95.5%; cursor:pointer; z-index:9999999999;
+ 	background-color:#159ECF;
+ 	border-radius:25px;
+ 	padding:5px; 	
+	@media (max-width:970px){left:85%;}
+	img{max-width:30px;margin-bottom:5px;}		
+}
  
  /* Links */
  div.law-nav{

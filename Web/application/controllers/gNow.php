@@ -24,7 +24,7 @@ class GNow extends CI_Controller {
 		$data = array(			
 			'title' 		=> $this->lang->line('gNow'), 
 			'mainView' 		=> 'home',
-			'scripts'		=> draggableMap()
+			'scripts'		=> draggableMap().search().jUI()
 		);
 		
 		$this->load->view('template/wrapper',$data);

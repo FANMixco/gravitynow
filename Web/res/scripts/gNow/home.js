@@ -18,4 +18,10 @@ $(document).ready(function(){
 			$('#help1').css('top','5%');
 		},3000);		
 	});
+	
+	$('#search').click(function(){			
+		$('#txtSearch').css('top',$('#search').offset().top); //Align the img and the textbox
+		$('#txtSearch').toggleClass('searchHidden');	
+		$('#txtSearch').focus();
+	});
 });

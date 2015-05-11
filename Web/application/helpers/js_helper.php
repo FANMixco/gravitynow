@@ -33,4 +33,22 @@ function draggableMap(){
 	return $draggableMap;
 }
 
+function search(){
+	$search = '
+	<!-- Search -->
+	<script src="'.base_url('res/scripts/maps/search.js').'"></script>
+	<script src="'.base_url('res/scripts/maps/gravity.js').'"></script>';
+	
+	return $search;
+}
+
+function jUI(){
+	$jui = '
+	<!-- jQuery-UI -->
+	<script src="'.base_url('res/scripts/jquery-ui-1.11.0.custom/jquery-ui.js').'"></script>
+	<link rel="stylesheet" type="text/css" href="'.base_url('res/scripts/jquery-ui-1.11.0.custom/jquery-ui.css').'"/>';
+	
+	return $jui;
+}
+
 ?>
